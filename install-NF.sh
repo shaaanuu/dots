@@ -42,12 +42,12 @@ declare -a fonts=(
 #    Iosevka
 #    IosevkaTerm
 #    IosevkaTermSlab
-#    JetBrainsMono
+    JetBrainsMono
 #    Lekton
 #    LiberationMono
 #    Lilex
 #    MartianMono
-    Meslo
+#    Meslo
 #    Monaspace
 #    Monofur
 #    Monoid

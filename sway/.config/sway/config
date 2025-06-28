@@ -1,52 +1,30 @@
 # super as mod
 set $mod Mod4
 
+# Cursor (https://github.com/ful1e5/BreezeX_Cursor)
+seat seat0 xcursor_theme BreezeX-Black 24
+
 # Gaps
 gaps outer 1px
 gaps inner 1px
 
-# Hide the title
-new_window 1pixel
+# Border and title
+default_border pixel 1
+titlebar_padding 1 1
 
 # Border Colors
 # class         border  backgr. text    indicator child_border
 client.focused  #6c7086 #285577 #ffffff #45475a   #45475a
 
 # font
-font pango:MesloLGS Nerd Font 8
-
-# Start XDG autostart .desktop files using dex. See also
-# https://wiki.archlinux.org/index.php/XDG_Autostart
-exec --no-startup-id dex --autostart --environment i3
+font pango:JetBrainsMono Nerd Font 8
 
 # wallpaper
-exec_always --no-startup-id pkill feh
-exec_always --no-startup-id feh --bg-scale ~/dots/spiderverse.png
+output * bg ~/.config/sway/spiderverse.png fill
 
-# Start Polybar
-exec_always --no-startup-id pkill polybar
-exec_always --no-startup-id ~/.config/polybar/launch.sh
-
-# Start picom
-exec_always --no-startup-id ~/.config/picom/run.sh
-
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-
-# NetworkManager is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
-
-# Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+# waybar
+exec_always --no-startup-id pkill waybar
+exec_always --no-startup-id bash -c 'sleep 0.2 && waybar -c ~/.config/waybar/sway/config.jsonc -s ~/.config/waybar/sway/style.css'
 
 # start a terminal
 bindsym $mod+Return exec alacritty
@@ -101,12 +79,6 @@ bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
-# focus the parent container
-bindsym $mod+a focus parent
-
-# focus the child container
-#bindsym $mod+d focus child
-
 # Names for default workspaces
 set $ws1 "1"
 set $ws2 "2"
@@ -144,11 +116,10 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Huh, wanna exit?' -B 'Exit' 'i3-msg exit'"
+bindsym $mod+Shift+r reload
+
+# exit sway
+bindsym $mod+Shift+q exec swaynag -t warning -m 'Self-destruct in 3... 2... just kidding. Logging out.' -B 'Boom' 'swaymsg exit'
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -158,16 +129,16 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 1 px or 1 ppt
+        bindsym j resize grow height 1 px or 1 ppt
+        bindsym k resize shrink height 1 px or 1 ppt
+        bindsym l resize grow width 1 px or 1 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 1 px or 1 ppt
+        bindsym Down resize grow height 1 px or 1 ppt
+        bindsym Up resize shrink height 1 px or 1 ppt
+        bindsym Right resize grow width 1 px or 1 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"

@@ -1,0 +1,2 @@
+- notification manager (dunst)
+- dock for sway

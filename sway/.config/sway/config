@@ -33,7 +33,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+q kill
 
 # rofi
-bindsym $mod+d exec rofi -show run 
+bindsym $mod+d exec rofi -show drun 
 
 # change focus
 bindsym $mod+h focus left

@@ -10,7 +10,7 @@ Wallpapers can be found at:
 
 ## What's inside?
 
-- **Sway** - Tiling window manager
+- **SwayFX** - Tiling window manager
 - **labwc** - Floating window manager
 - **Alacritty** - Terminal
 - **Fastfetch** - Helps to flex

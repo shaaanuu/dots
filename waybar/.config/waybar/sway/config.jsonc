@@ -7,7 +7,15 @@
 
   "modules-left": ["custom/menu", "sway/workspaces"],
   "modules-center": ["clock"],
-  "modules-right": ["pulseaudio", "backlight"],
+  "modules-right": ["cpu", "memory", "pulseaudio", "backlight", "custom/power"],
+
+  "sway/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "focused": "",
+      "default": ""
+    }
+  },
 
   "custom/menu": {
     "format": "",
@@ -33,5 +41,22 @@
     "format-icons": "󰕾",
     "tooltip": false,
     "on-click": "pamixer --toggle-mute"
+  },
+
+  "memory": {
+    "format": " {percentage}%",
+    "tooltip": true,
+    "tooltip-format": "Used: {used} / {total} ({percentage}%)\nSwap: {swapUsed} / {swapTotal}",
+    "interval": 5
+  },
+
+  "cpu": {
+    "format": "󰍛 {usage}%",
+    "interval": 5
+  },
+
+  "custom/power": {
+    "format": "⏻",
+    "tooltip": false
   }
 }

@@ -7,7 +7,7 @@
 
   "modules-left": ["custom/menu"],
   "modules-center": ["clock"],
-  "modules-right": ["pulseaudio", "backlight"],
+  "modules-right": ["pulseaudio", "backlight", "custom/power"],
 
   "custom/menu": {
     "format": "",
@@ -33,5 +33,10 @@
     "format-icons": "󰕾",
     "tooltip": false,
     "on-click": "pamixer --toggle-mute"
+  },
+
+  "custom/power": {
+    "format": "⏻",
+    "tooltip": false
   }
 }

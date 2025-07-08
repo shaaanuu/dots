@@ -29,7 +29,8 @@ tooltip label {
 #custom-menu,
 #pulseaudio,
 #backlight,
-#clock {
+#clock,
+#custom-power {
   background: @background;
   padding: 3px 10px;
   margin-top: 3px;

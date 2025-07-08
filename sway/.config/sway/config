@@ -4,9 +4,16 @@ set $mod Mod4
 # Cursor (https://github.com/ful1e5/BreezeX_Cursor)
 seat seat0 xcursor_theme BreezeX-Black 24
 
+# blur
+blur enable
+blur_radius 1
+
+# rounded corners
+corner_radius 10
+
 # Gaps
-gaps outer 1px
-gaps inner 1px
+gaps outer 2
+gaps inner 2
 
 # Border and title
 default_border pixel 1
@@ -75,6 +82,10 @@ bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
+
+# hold the mod key and use the left key to move
+# use the right key to resize
+floating_modifier $mod normal
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle

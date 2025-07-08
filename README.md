@@ -57,11 +57,11 @@ sudo pacman -S stow
 
 - **SDDM**
 
-```bash
-    sudo stow -t / sddm
-    sudo cp -r sddm/usr/share/sddm/themes/spiderverse /usr/share/sddm/themes/
-    sudo cp Electroharmonix.otf /usr/share/fonts/OTF/
-    fc-cache -fv
-```
+  ```bash
+  sudo stow -t / sddm
+  sudo cp -r sddm/usr/share/sddm/themes/spiderverse /usr/share/sddm/themes/
+  sudo cp Electroharmonix.otf /usr/share/fonts/OTF/
+  fc-cache -fv
+    ```
 
 **Disclaimer:** Using `stow` incorrectly can potentially overwrite important system files. Proceed with caution and refer to the `stow` documentation for detailed guidance. And never blame me for any damages...

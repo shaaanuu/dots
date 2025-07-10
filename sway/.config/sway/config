@@ -7,7 +7,7 @@ seat seat0 xcursor_theme BreezeX-Black 24
 # blur
 blur enable
 blur_radius 1
-layer_effects "waybar" blur enable; shadows enable; corner_radius 6
+layer_effects "waybar" blur enable
 
 # rounded corners
 corner_radius 10
@@ -29,6 +29,9 @@ font pango:JetBrainsMono Nerd Font 8
 
 # wallpaper
 output * bg ~/.config/sway/spiderverse.png fill
+
+# mako (notifications)
+exec_always mako
 
 # waybar
 exec_always --no-startup-id pkill waybar

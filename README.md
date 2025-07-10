@@ -19,6 +19,7 @@ Wallpapers can be found at:
 - **Sddm** - Greeter
 - **Waybar** - Top Bar
 - **zsh** - With _Oh My Zsh_
+- **mako** - notification daemon
 
 ## Installation
 

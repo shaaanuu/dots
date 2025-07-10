@@ -1,3 +1,4 @@
 - notification manager (dunst)
 - dock for sway
 - sddm date format
+- cursor

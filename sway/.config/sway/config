@@ -7,6 +7,7 @@ seat seat0 xcursor_theme BreezeX-Black 24
 # blur
 blur enable
 blur_radius 1
+layer_effects "waybar" blur enable; shadows enable; corner_radius 6
 
 # rounded corners
 corner_radius 10

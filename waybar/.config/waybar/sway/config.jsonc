@@ -1,58 +1,49 @@
 {
-  "layer": "top",
   "position": "top",
-  "height": 28,
-  "spacing": 4,
-  "reload_style_on_change": true,
-
   "modules-left": ["custom/menu", "sway/workspaces"],
   "modules-center": ["clock"],
-  "modules-right": ["cpu", "memory", "pulseaudio", "backlight", "custom/power"],
+  "modules-right": ["network", "pulseaudio", "backlight", "custom/power"],
 
   "sway/workspaces": {
     "format": "{icon}",
     "format-icons": {
-      "focused": "",
-      "default": ""
+      "default": "",
+      "urgent": "",
+      "focused": ""
     }
   },
 
   "custom/menu": {
-    "format": "",
+    "format": "",
     "on-click": "rofi -show drun",
     "tooltip": false
   },
 
   "clock": {
-    "tooltip-format": "<big>{:%A %d}</big>\n<tt><small>{calendar}</small></tt>",
-    "format": "{:%I:%M %p}",
-    "format-alt": "{:%A, %d %B %Y}"
+    "format": " {:%a %d %I:%M %p}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+
+  "network": {
+    "format-wifi": "  {essid}",
+    "format-ethernet": "󰤭 Disconnected",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "  Disconnected",
+    "tooltip-format-wifi": "Signal Strength: {signalStrength}%"
+  },
+
+  "pulseaudio": {
+    "tooltip": false,
+    "on-click": "pamixer --toggle-mute",
+    "format": "{icon} {volume}%",
+    "format-muted": " Muted",
+    "format-icons": " "
   },
 
   "backlight": {
     "tooltip": false,
-    "format": "{icon}  {percent}%",
+    "format": "{icon} {percent}%",
     "format-icons": ""
-  },
-
-  "pulseaudio": {
-    "format": "{icon} {volume}%",
-    "format-muted": "󰖁",
-    "format-icons": "󰕾",
-    "tooltip": false,
-    "on-click": "pamixer --toggle-mute"
-  },
-
-  "memory": {
-    "format": " {percentage}%",
-    "tooltip": true,
-    "tooltip-format": "Used: {used} / {total} ({percentage}%)\nSwap: {swapUsed} / {swapTotal}",
-    "interval": 5
-  },
-
-  "cpu": {
-    "format": "󰍛 {usage}%",
-    "interval": 5
   },
 
   "custom/power": {
@@ -60,3 +51,4 @@
     "tooltip": false
   }
 }
+

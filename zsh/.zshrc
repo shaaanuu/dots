@@ -23,3 +23,11 @@ export ANDROID_SDK_ROOT=$HOME/dev/android
 export PATH=$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/platform-tools:$PATH
 
 source $ZSH/oh-my-zsh.sh
+
+# bun completions
+[ -s "/home/shaaanuu/.bun/_bun" ] && source "/home/shaaanuu/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH=$HOME/.local/bin:$PATH

@@ -16,7 +16,7 @@ Wallpapers can be found at:
 - **Fastfetch** - Helps to flex
 - **Nvim** - Text editor
 - **Rofi** - App/program launcher
-- **Sddm** - Greeter
+- **Sddm** - Greeter with theme of [silentSDDM](https://github.com/uiriansan/SilentSDDM)
 - **Waybar** - Top Bar
 - **zsh** - With _Oh My Zsh_
 - **mako** - Notification daemon

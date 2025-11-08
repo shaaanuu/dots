@@ -52,6 +52,11 @@ bindsym Print exec swaycut -m output
 bindsym $mod+Print exec swaycut -m window
 bindsym $mod+Shift+Print exec swaycut -m region
 
+# volume key mapping
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +1%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -1%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+
 # start a terminal
 bindsym $mod+Return exec alacritty
 

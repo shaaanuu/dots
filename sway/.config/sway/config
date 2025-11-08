@@ -1,8 +1,18 @@
 # super as mod
 set $mod Mod4
 
+# Start the wlroots portal so file‑dialogs work
+exec --no-startup-id systemctl --user start xdg-desktop-portal-wlr.service
+
 # Cursor (https://github.com/ful1e5/BreezeX_Cursor)
 seat seat0 xcursor_theme Bibata-Modern-Classic 20
+
+# tap with touchpad
+input "type:touchpad" {
+  dwt enabled
+  tap enabled
+  middle_emulation enabled
+}
 
 # blur
 blur enable

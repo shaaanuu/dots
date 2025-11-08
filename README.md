@@ -6,7 +6,7 @@ Wallpapers can be found at:
 
 - [pixels](labwc/.config/labwc/pixels.png)
 - [spiderverse](sway/.config/sway/spiderverse.png)
-- [spiderverse2](sddm/usr/share/sddm/themes/spiderverse/backgrounds/spiderverse2.jpg)
+- [lockscreen](sddm/backgrounds/)
 
 ## What's inside?
 
@@ -19,7 +19,8 @@ Wallpapers can be found at:
 - **Sddm** - Greeter
 - **Waybar** - Top Bar
 - **zsh** - With _Oh My Zsh_
-- **mako** - notification daemon
+- **mako** - Notification daemon
+- **nwg-look** - GTK3 settings editor
 
 ## Installation
 

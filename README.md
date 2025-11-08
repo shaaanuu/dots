@@ -58,11 +58,37 @@ sudo pacman -S stow
 
 - **SDDM**
 
+    - run the script
+        ```bash
+        cd sddm/
+        ./install.sh
+        ```
+
+    - create `/etc/sddm.conf`
+    ```conf
+    [General]
+    InputMethod=qtvirtualkeyboard
+    GreeterEnvironment=QML2_IMPORT_PATH=/usr/share/sddm/themes/silent/components/,QT_IM_MODULE=qtvirtualkeyboard
+
+    [Theme]
+    Current=silent
+    ```
+
+    - create a script
     ```bash
-    sudo stow -t / sddm
-    sudo cp -r sddm/usr/share/sddm/themes/spiderverse /usr/share/sddm/themes/
-    sudo cp Electroharmonix.otf /usr/share/fonts/OTF/
-    fc-cache -fv
+    sudo mkdir -p /usr/share/sddm/scripts
+    sudo nano /usr/share/sddm/scripts/wayland-session
+    ```
+
+    - put this inside
+    ```bash
+    #!/bin/sh
+    exec "$@"
+    ```
+
+    -finally
+    ```bash
+    sudo chmod +x /usr/share/sddm/scripts/wayland-session
     ```
 
 - **Cursor**
